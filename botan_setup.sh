@@ -63,7 +63,7 @@ do
             ;;
         "Laptop")
             echo "Now installing Laptop settings"
-            sudo aura -A auto-cpufreq
+            sudo aura -A auto-cpufreq powertop-auto-tune
             systemctl enable --now auto-cpufreq.service
             break
             ;;
@@ -72,10 +72,11 @@ do
 done
 
 echo "Installing Botan's packages list"
-sudo aura -S filezilla wine-staging firefox android-tools zsh-theme-powerlevel10k neofetch steam lib32-gnutls gdu btop plasma-systemmonitor elisa spectacle discord telegram-desktop lutris zstd 	lib32-zstd bleachbit
+sudo aura -S --noconfirm filezilla wine-staging firefox android-tools zsh-theme-powerlevel10k neofetch steam lib32-gnutls gdu btop plasma-systemmonitor elisa spectacle discord telegram-desktop lutris zstd lib32-zstd bleachbit
 curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -
-sudo aura -A vscodium-bin spotify spotify-adblock mangohud goverlay protonup-qt-bin brave-bin an-anime-game-launcher-gtk-bin oh-my-zsh-git oh-my-zsh-plugin-syntax-highlighting oh-my-zsh-plugin-autosuggestions cpufetch github-cli-git github-desktop-bin heroic-games-launcher-bin dxvk-bin zsh-theme-powerlevel10k-git ttf-meslo-nerd-font-powerlevel10k
+sudo aura -A --noconfirm vscodium-bin spotify spotify-adblock mangohud goverlay protonup-qt-bin brave-bin an-anime-game-launcher-gtk-bin oh-my-zsh-git oh-my-zsh-plugin-syntax-highlighting oh-my-zsh-plugin-autosuggestions cpufetch github-cli-git github-desktop-bin heroic-games-launcher-bin dxvk-bin zsh-theme-powerlevel10k-git ttf-meslo-nerd-font-powerlevel10k
 
+setup_dxvk install
 cp config/p10k.zsh ../../.p10k.zsh
 cp config/shell.pre-oh-my-zsh ../../.shell.pre-oh-my-zsh
 cp config/zshrc ../../.zshrc
