@@ -63,7 +63,8 @@ do
             ;;
         "Laptop")
             echo "Now installing Laptop settings"
-            sudo aura -A auto-cpufreq powertop-auto-tune
+            sudo aura -S tlc
+            sudo aura -A powertop-auto-tune
             systemctl enable --now auto-cpufreq.service
             break
             ;;
